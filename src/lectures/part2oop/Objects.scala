@@ -23,12 +23,12 @@ object Objects {
     println(Person.N_EYES)
     println(Person.canFly)
 
-    // Scala Object = Singlenton Instance
+    // Scala Object = Singleton Instance
     val mery = Person
     val jhon = Person
 
     println(mery == jhon)
-    // Scala Object = Singlenton Instance
+    // Scala Object = Singleton Instance
     val m = new Person
     val j = new Person
 
