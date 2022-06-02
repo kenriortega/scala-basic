@@ -1,8 +1,7 @@
-package com.kenri.scala.oop.filesystem
+package fs.filesystem
 
-import com.kenri.scala.oop.commands.Command
-import com.kenri.scala.oop.files.Directory
-
+import fs.files.Directory
+import fs.commands.Command
 import java.util.Scanner
 
 object Filesystem extends App {

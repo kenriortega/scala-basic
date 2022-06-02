@@ -1,6 +1,6 @@
-package com.kenri.scala.oop.commands
+package fs.commands
 
-import com.kenri.scala.oop.filesystem.State
+import fs.filesystem.State
 
 class UnknownCommand extends Command {
   override def apply(state: State): State =

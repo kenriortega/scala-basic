@@ -1,7 +1,6 @@
-package com.kenri.scala.oop.filesystem
+package fs.filesystem
 
-import com.kenri.scala.oop.files.Directory
-import jdk.javadoc.internal.doclets.toolkit.util.DocFinder.Output
+import fs.files.Directory
 
 class State(val root: Directory, val wd: Directory, val output: String) {
 
