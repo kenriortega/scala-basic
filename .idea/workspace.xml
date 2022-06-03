@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="242bd773-b324-49fb-b061-668ce7aded2e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/fs/commands/Command.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fs/files/Directory.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rock-beginer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/scala-basic.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kenri/scala/oop/commands/Command.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kenri/scala/oop/commands/UnknownCommand.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/commands/UnknownCommand.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kenri/scala/oop/files/DirEntry.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/files/DirEntry.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kenri/scala/oop/files/Directory.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kenri/scala/oop/filesystem/Filesystem.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/filesystem/Filesystem.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kenri/scala/oop/filesystem/State.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/filesystem/State.scala" afterDir="false" />
+    <list default="true" id="242bd773-b324-49fb-b061-668ce7aded2e" name="Changes" comment="ref: add new commands `mkdir` &amp; `ls`">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fs/commands/Command.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/commands/Command.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fs/commands/Mkdir.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/commands/Mkdir.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fs/files/DirEntry.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/files/DirEntry.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fs/files/Directory.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/files/Directory.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +77,14 @@
       <option name="presentableId" value="Default" />
       <updated>1654187204163</updated>
     </task>
+    <task id="LOCAL-00001" summary="ref: add new commands `mkdir` &amp; `ls`">
+      <created>1654191952437</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654191952437</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +97,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ref: add new commands `mkdir` &amp; `ls`" />
+    <option name="LAST_COMMIT_MESSAGE" value="ref: add new commands `mkdir` &amp; `ls`" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
