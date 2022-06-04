@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="242bd773-b324-49fb-b061-668ce7aded2e" name="Changes" comment="ref: add new commands `mkdir` &amp; `ls`">
+    <list default="true" id="242bd773-b324-49fb-b061-668ce7aded2e" name="Changes" comment="ref: change mkdir command">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fs/commands/Command.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/commands/Command.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fs/commands/Mkdir.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/commands/Mkdir.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fs/files/DirEntry.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/files/DirEntry.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fs/files/Directory.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/files/Directory.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fs/files/File.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/files/File.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +84,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654191952437</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ref: add new commands `touch` &amp; `pwd`">
+      <created>1654282516001</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654282516001</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ref: change mkdir command">
+      <created>1654282540589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1654282540589</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,7 +114,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ref: add new commands `mkdir` &amp; `ls`" />
-    <option name="LAST_COMMIT_MESSAGE" value="ref: add new commands `mkdir` &amp; `ls`" />
+    <MESSAGE value="ref: add new commands `touch` &amp; `pwd`" />
+    <MESSAGE value="ref: change mkdir command" />
+    <option name="LAST_COMMIT_MESSAGE" value="ref: change mkdir command" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

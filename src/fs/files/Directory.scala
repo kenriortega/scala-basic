@@ -6,6 +6,11 @@ import scala.annotation.tailrec
 
 class Directory(override val parentPath: String, override val name: String, val contents: List[DirEntry])
   extends DirEntry(parentPath, name) {
+  def removeEntry(entryName: String): Directory = {
+    if (!hashEntry(entryName)) this
+    else new Directory(parentPath, name, contents.filter(x => !x.name.equals(entryName)))
+  }
+
   override def getType: String = "Directory"
 
   def replaceEntry(entryName: String, newEntry: Directory): Directory = {
@@ -40,11 +45,21 @@ class Directory(override val parentPath: String, override val name: String, val 
     else findEntry(path.head).asDirectory.findDescendant(path.tail)
   }
 
+  def findDescendant(relativePath: String): Directory = {
+    if (relativePath.isEmpty) this
+    else findDescendant(relativePath.split(Directory.SEPARATOR).toList)
+  }
+
   def asDirectory: Directory = this
 
   def asFile: File =
     throw new FilesystemException("A directory cannot be converted to a file")
 
+  def isRoot: Boolean = parentPath.isEmpty
+
+  override def isDirectory: Boolean = true
+
+  override def isFile: Boolean = false
 }
 
 object Directory {
