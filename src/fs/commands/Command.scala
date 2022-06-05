@@ -2,9 +2,7 @@ package fs.commands
 
 import fs.filesystem.State
 
-trait Command {
-
-  def apply(state: State): State
+trait Command extends (State => State) {
 }
 
 object Command {
@@ -14,6 +12,8 @@ object Command {
   var TOUCH = "touch"
   var CD = "cd"
   var RM = "rm"
+  var ECHO = "echo"
+  var CAT = "cat"
 
   def emptyCommand: Command = (state: State) => state
 
@@ -41,6 +41,12 @@ object Command {
     else if (RM.equals(tokens(0)))
       if (tokens.length < 2) incompleteCommand(RM)
       else new Rm(tokens(1))
+    else if (ECHO.equals(tokens(0)))
+      if (tokens.length < 2) incompleteCommand(ECHO)
+      else new Echo(tokens.tail)
+    else if (CAT.equals(tokens(0)))
+      if (tokens.length < 2) incompleteCommand(CAT)
+      else new Cat(tokens(1))
     else new UnknownCommand
   }
 }
