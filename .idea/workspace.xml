@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="242bd773-b324-49fb-b061-668ce7aded2e" name="Changes" comment="ref: add `cd` &amp; `rm` command">
+    <list default="true" id="242bd773-b324-49fb-b061-668ce7aded2e" name="Changes" comment="ref: add `cat` &amp; `echo` command">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fs/commands/Command.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/fs/commands/Command.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/Mylist.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/Mylist.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +45,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.WhatsAFunction">
     <configuration name="Filesystem" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="fs.filesystem.Filesystem" />
       <module name="scala-basic" />
@@ -59,8 +59,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WhatsAFunction" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="lectures.part3fp.WhatsAFunction" />
+      <module name="scala-basic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lectures.part3fp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WhatsAFunction" />
         <item itemvalue="Application.Filesystem" />
       </list>
     </recent_temporary>
@@ -102,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654307883800</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ref: add `cat` &amp; `echo` command">
+      <created>1654435871759</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654435871759</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,7 +142,8 @@
     <MESSAGE value="ref: add new commands `touch` &amp; `pwd`" />
     <MESSAGE value="ref: change mkdir command" />
     <MESSAGE value="ref: add `cd` &amp; `rm` command" />
-    <option name="LAST_COMMIT_MESSAGE" value="ref: add `cd` &amp; `rm` command" />
+    <MESSAGE value="ref: add `cat` &amp; `echo` command" />
+    <option name="LAST_COMMIT_MESSAGE" value="ref: add `cat` &amp; `echo` command" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
