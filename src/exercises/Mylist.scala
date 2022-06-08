@@ -1,18 +1,19 @@
 package exercises
 
-abstract class Mylist[+A] {
+
+abstract class MyList[+A] {
 
   // head = first element of the list
   def head: A
 
   // tail = reminder of the list
-  def tail: Mylist[A]
+  def tail: MyList[A]
 
   // isEmpty = is this list is empty
   def isEmpty: Boolean
 
   // add(int) => new list with this element added
-  def add[B >: A](element: B): Mylist[B]
+  def add[B >: A](element: B): MyList[B]
 
   // toString => a string representation of the list
   def printElements: String
@@ -21,60 +22,106 @@ abstract class Mylist[+A] {
 
   // HOF higher-order functions
   // (receiver function as parameter for return function as result)
-  def map[B](transformer: A => B): Mylist[B]
+  def map[B](transformer: A => B): MyList[B]
 
-  def flatMap[B](transformer: A => Mylist[B]): Mylist[B]
+  def flatMap[B](transformer: A => MyList[B]): MyList[B]
 
-  def filter(predicate: A => Boolean): Mylist[A]
+  def filter(predicate: A => Boolean): MyList[A]
 
   //
-  def ++[B >: A](list: Mylist[B]): Mylist[B]
+  def ++[B >: A](list: MyList[B]): MyList[B]
+
+  // hofs
+  def foreach(f: A => Unit): Unit
+
+  def sort(compare: (A, A) => Int): MyList[A]
+
+  def zipWith[B, C](list: MyList[B], zip: (A, B) => C): MyList[C]
+
+  def fold[B](start: B)(operator: (B, A) => B): B
 }
 
-case object Empty extends Mylist[Nothing] {
+case object Empty extends MyList[Nothing] {
   def head: Nothing = throw new NoSuchElementException
 
-  def tail: Mylist[Nothing] = throw new NoSuchElementException
+  def tail: MyList[Nothing] = throw new NoSuchElementException
 
   def isEmpty: Boolean = true
 
-  def add[B >: Nothing](element: B): Mylist[B] = new Cons(element, Empty)
+  def add[B >: Nothing](element: B): MyList[B] = new Cons(element, Empty)
 
   def printElements: String = ""
 
-  def map[B](transformer: Nothing => B): Mylist[B] = Empty
+  def map[B](transformer: Nothing => B): MyList[B] = Empty
 
-  def flatMap[B](transformer: Nothing => Mylist[B]): Mylist[B] = Empty
+  def flatMap[B](transformer: Nothing => MyList[B]): MyList[B] = Empty
 
-  def filter(predicate: Nothing => Boolean): Mylist[Nothing] = Empty
+  def filter(predicate: Nothing => Boolean): MyList[Nothing] = Empty
 
-  override def ++[B >: Nothing](list: Mylist[B]): Mylist[B] = list
+  override def ++[B >: Nothing](list: MyList[B]): MyList[B] = list
+
+  // hofs
+  def foreach(f: Nothing => Unit): Unit = ()
+
+  def sort(compare: (Nothing, Nothing) => Int): MyList[Nothing] = Empty
+
+  def zipWith[B, C](list: MyList[B], zip: (Nothing, B) => C): MyList[C] =
+    if (!list.isEmpty) throw new RuntimeException("List do not have the same length")
+    else Empty
+
+  override def fold[B](start: B)(operator: (B, Nothing) => B): B = start
 }
 
-case class Cons[+A](h: A, t: Mylist[A]) extends Mylist[A] {
+case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
   def head: A = h
 
-  def tail: Mylist[A] = t
+  def tail: MyList[A] = t
 
   def isEmpty: Boolean = false
 
-  def add[B >: A](element: B): Mylist[B] = new Cons(element, this)
+  def add[B >: A](element: B): MyList[B] = new Cons(element, this)
 
   def printElements: String =
     if (t.isEmpty) "" + h
     else h + " " + t.printElements
 
-  def filter(predicate: A => Boolean): Mylist[A] =
+  def filter(predicate: A => Boolean): MyList[A] =
     if (predicate(h)) new Cons(h, t.filter(predicate))
     else t.filter(predicate)
 
-  def map[B](transformer: A => B): Mylist[B] =
+  def map[B](transformer: A => B): MyList[B] =
     new Cons(transformer(h), t.map(transformer))
 
-  def ++[B >: A](list: Mylist[B]): Mylist[B] = new Cons[B](h, t ++ list)
+  def ++[B >: A](list: MyList[B]): MyList[B] = new Cons[B](h, t ++ list)
 
-  def flatMap[B](transformer: A => Mylist[B]): Mylist[B] =
+  def flatMap[B](transformer: A => MyList[B]): MyList[B] =
     transformer(h) ++ t.flatMap(transformer)
+
+  // hofs
+  override def foreach(f: A => Unit): Unit = {
+    f(h)
+    t.foreach(f)
+  }
+
+  override def sort(compare: (A, A) => Int): MyList[A] = {
+    def insert(x: A, sortedList: MyList[A]): MyList[A] = {
+      if (sortedList.isEmpty) Cons(x, Empty)
+      else if (compare(x, sortedList.head) <= 0) Cons(x, sortedList)
+      else Cons(sortedList.head, insert(x, sortedList.tail))
+    }
+
+    val sortedTail = t.sort(compare)
+    insert(h, sortedTail)
+  }
+
+  override def zipWith[B, C](list: MyList[B], zip: (A, B) => C): MyList[C] = {
+    if (list.isEmpty) throw new RuntimeException("List do not have the same length")
+    else new Cons(zip(h, list.head), t.zipWith(list.tail, zip))
+  }
+
+  override def fold[B](start: B)(operator: (B, A) => B): B = {
+    t.fold(operator(start, h))(operator)
+  }
 }
 
 /*
@@ -105,30 +152,32 @@ case class Cons[+A](h: A, t: Mylist[A]) extends Mylist[A] {
 
 
 object ListTest extends App {
-  val listOfIntegers: Mylist[Int] = new Cons[Int](1, new Cons[Int](2, new Cons[Int](17, Empty)))
-  val cloneListOfIntegers: Mylist[Int] = new Cons[Int](1, new Cons[Int](2, new Cons[Int](17, Empty)))
-  val listOfStr: Mylist[String] = new Cons[String]("hello", new Cons[String]("Scala", Empty))
+  val listOfIntegers: MyList[Int] = new Cons[Int](1, new Cons[Int](2, new Cons[Int](17, Empty)))
+  val cloneListOfIntegers: MyList[Int] = new Cons[Int](1, new Cons[Int](2, new Cons[Int](17, Empty)))
+  val listOfStr: MyList[String] = new Cons[String]("hello", new Cons[String]("Scala", Empty))
+  val anotherListOfStr: MyList[String] = new Cons[String]("hi", new Cons[String]("kotlin", Empty))
 
   println(listOfStr.toString)
   println(listOfIntegers.toString)
 
-  println(listOfIntegers.map(new Function1[Int, Int] {
-    override def apply(elem: Int): Int = elem * 2
-  }).toString)
+  println(listOfIntegers.map(_ * 2).toString)
 
   println(listOfIntegers
-    .map(new Function1[Int, Int] {
-      override def apply(elem: Int): Int = elem * 2
-    })
-    .filter(new Function1[Int, Boolean] {
-      override def apply(elem: Int): Boolean = elem % 2 == 0
-    }).toString)
+    .map(_ * 2)
+    .filter(_ % 2 == 0).toString)
 
-  val anotherListInteger: Mylist[Int] = new Cons[Int](4, new Cons[Int](5, Empty))
+  val anotherListInteger: MyList[Int] = new Cons[Int](4, new Cons[Int](5, Empty))
   println((listOfIntegers ++ anotherListInteger).toString)
-  println(listOfIntegers.flatMap(new Function1[Int, Mylist[Int]] {
-    override def apply(elem: Int): Mylist[Int] = new Cons[Int](elem, new Cons(elem + 1, Empty))
-  }).toString)
+  println(listOfIntegers.flatMap((elem: Int) => new Cons[Int](elem, Cons(elem + 1, Empty))).toString)
 
   println(cloneListOfIntegers == listOfIntegers)
+
+  // hofs
+  listOfIntegers.foreach(println)
+
+  println(listOfIntegers.sort((x, y) => y - x))
+
+  println(anotherListOfStr.zipWith[String, String](listOfStr, _ + "-" + _))
+
+  println(listOfIntegers.fold(0)(_ + _))
 }
