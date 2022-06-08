@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="242bd773-b324-49fb-b061-668ce7aded2e" name="Changes" comment="feat: working with HoFs">
+    <list default="true" id="242bd773-b324-49fb-b061-668ce7aded2e" name="Changes" comment="feat: working with collections map,filter,flatmap,for comprehensions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/Mylist.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/Mylist.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.MaybeTest">
+  <component name="RunManager" selected="Application.Sequences">
     <configuration name="HoFsCurries" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="lectures.part3fp.HoFsCurries" />
       <module name="scala-basic" />
@@ -98,8 +97,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WhatsAFunction" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="lectures.part3fp.WhatsAFunction" />
+    <configuration name="Sequences" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="lectures.part3fp.Sequences" />
       <module name="scala-basic" />
       <extension name="coverage">
         <pattern>
@@ -113,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Sequences" />
         <item itemvalue="Application.MaybeTest" />
         <item itemvalue="Application.ListTest" />
         <item itemvalue="Application.MapFlatMapFilterFor" />
         <item itemvalue="Application.HoFsCurries" />
-        <item itemvalue="Application.WhatsAFunction" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654686273362</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: working with collections map,filter,flatmap,for comprehensions">
+      <created>1654688460211</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654688460211</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,7 +207,8 @@
     <MESSAGE value="ref: add `cat` &amp; `echo` command" />
     <MESSAGE value="feat: add functional concept's module 3" />
     <MESSAGE value="feat: working with HoFs" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: working with HoFs" />
+    <MESSAGE value="feat: working with collections map,filter,flatmap,for comprehensions" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: working with collections map,filter,flatmap,for comprehensions" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
