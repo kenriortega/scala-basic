@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="242bd773-b324-49fb-b061-668ce7aded2e" name="Changes" comment="feat: working with seq, list,array, vectors">
+    <list default="true" id="242bd773-b324-49fb-b061-668ce7aded2e" name="Changes" comment="feat: working with options,try,failure and success objects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,13 +44,13 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.HandlingFailure">
-    <configuration name="HandlingFailure" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="lectures.part3fp.HandlingFailure" />
+  <component name="RunManager" selected="Application.AllPatterns">
+    <configuration name="AllPatterns" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="lectures.part4pm.AllPatterns" />
       <module name="scala-basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lectures.part3fp.*" />
+          <option name="PATTERN" value="lectures.part4pm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -58,12 +58,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaybeTest" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="exercises.MaybeTest" />
+    <configuration name="HandlingFailure" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="lectures.part3fp.HandlingFailure" />
       <module name="scala-basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="exercises.*" />
+          <option name="PATTERN" value="lectures.part3fp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,12 +84,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Sequences" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="lectures.part3fp.Sequences" />
+    <configuration name="PatternMatching" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="lectures.part4pm.PatternMatching" />
       <module name="scala-basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lectures.part3fp.*" />
+          <option name="PATTERN" value="lectures.part4pm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AllPatterns" />
+        <item itemvalue="Application.PatternMatching" />
         <item itemvalue="Application.HandlingFailure" />
         <item itemvalue="Application.Options" />
         <item itemvalue="Application.TuplesAndMaps" />
-        <item itemvalue="Application.Sequences" />
-        <item itemvalue="Application.MaybeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654697339071</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: working with options,try,failure and success objects">
+      <created>1654893503714</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1654893503714</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,7 +223,10 @@
     <MESSAGE value="feat: working with HoFs" />
     <MESSAGE value="feat: working with collections map,filter,flatmap,for comprehensions" />
     <MESSAGE value="feat: working with seq, list,array, vectors" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: working with seq, list,array, vectors" />
+    <MESSAGE value="feat: working with tuples and maps" />
+    <MESSAGE value="feat: working with options" />
+    <MESSAGE value="feat: working with options,try,failure and success objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: working with options,try,failure and success objects" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
